@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<title>The Tree</title>
+	<link rel="stylesheet" href="static/css/bootstrap.css">
+	<link rel="stylesheet" href="static/css/style.css">
+</head>
+<style>
+	.cal-container {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.cal-label {
+		display: block;
+		margin-bottom: 10px;
+		font-weight: bold;
+	}
+
+	.cal-select,
+	.cal-input {
+		padding: 5px;
+		border: 1px solid #ccc;
+		border-radius: 4px;
+		width: 200px;
+		margin-bottom: 10px;
+	}
+
+	.cal-button {
+		padding: 10px 20px;
+		background-color: #4CAF50;
+		color: white;
+		border: none;
+		border-radius: 4px;
+		cursor: pointer;
+	}
+
+	.cal-button:hover {
+		background-color: #45a049;
+	}
+
+	.cal-result {
+		margin-top: 20px;
+		font-weight: bold;
+	}
+
+	.cal-result span {
+		color: #4CAF50;
+	}
+
+	h2 {
+		text-align: center;
+		color: #333;
+		margin-top: 20px;
+	}
+
+	#result {
+		background-color: #fff;
+		padding: 20px;
+		border-radius: 5px;
+		box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+		margin-top: 10px;
+		margin-left: 300px;
+	}
+
+	.quiz-box {
+		margin-left: 300px;
+		padding: 20px;
+	}
+
+	.quiz-box .question {
+		margin-bottom: 20px;
+	}
+
+	.quiz-box .options {
+		margin-left: 20px;
+	}
+
+	.quiz-box .submit-btn {
+		text-align: center;
+		margin-top: 20px;
+	}
+
+	.footer-bottom h3 {
+		color: #cdc2b3;
+	}
+
+	.header-top .top-left .name {
+		margin-right: 0px;
+	}
+</style>
+
+<body>
+	<div class="page-wrapper">
+
+		<div class="preloader"></div>
+
+		<!-- Main Header-->
+		<header class="main-header">
+
+			<!--Header Top-->
+			<div class="header-top">
+				<div class="auto-container">
+					<div class="clearfix">
+						<div class="top-left">
+							<ul class="clearfix">
+								<li>Welcome to The Tree of Greenhouse Effect</li>
+								<li> &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
+								<li class="name">Author: Irene, Eileen, Charlie, Tracy, Maggie</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!--Header-Upper-->
+			<div class="header-upper">
+				<div class="auto-container clearfix">
+					<div class="pull-left logo-outer">
+						<div class="logo"><a href="#"><img src="./img/健康环境-01.png" alt="Aizen - Architecture Template"
+									title="Aizen - Architecture Template"></a></div>
+					</div>
+					<div class="pull-right upper-right clearfix">
+						<nav class="main-menu">
+							<div class="navbar-header">
+								<!-- Toggle Button -->
+								<button type="button" class="navbar-toggle" data-toggle="collapse"
+									data-target=".navbar-collapse">
+									<span class="icon-bar"></span>
+									<span class="icon-bar"></span>
+									<span class="icon-bar"></span>
+								</button>
+							</div>
+							<div class="navbar-collapse collapse clearfix">
+								<ul class="navigation clearfix">
+									<li><a href="#">greenhouse gas</a></li>
+									<li><a href="#">CO2</a></li>
+									<li><a href="#">CH4</a></li>
+									<li><a href="#">H2O</a></li>
+								</ul>
+							</div>
+						</nav>
+					</div>
+				</div>
+			</div>
+			<!--End Header Upper-->
+
+			<!--Sticky Header-->
+			<div class="sticky-header">
+				<div class="auto-container clearfix">
+					<!--Logo-->
+					<div class="logo pull-left">
+						<a href="#" class="img-responsive"><img src="./img/健康环境-01.png"
+								alt="Aizen - Architecture Template" title="Aizen - Architecture Template"></a>
+					</div>
+					<!--Right Col-->
+					<div class="right-col pull-right">
+
+						<!-- Main Menu -->
+						<nav class="main-menu">
+							<div class="navbar-header">
+								<!-- Toggle Button -->
+								<button type="button" class="navbar-toggle" data-toggle="collapse"
+									data-target=".navbar-collapse">
+									<span class="icon-bar"></span>
+									<span class="icon-bar"></span>
+									<span class="icon-bar"></span>
+								</button>
+							</div>
+							<div class="navbar-collapse collapse clearfix">
+								<ul class="navigation clearfix">
+									<li><a href="#">greenhouse gas</a></li>
+									<li><a href="#">CO2</a></li>
+									<li><a href="#">CH4</a></li>
+									<li><a href="#">H2O</a></li>
+
+								</ul>
+							</div>
+						</nav>
+						<!-- Main Menu End-->
+
+					</div>
+				</div>
+			</div>
+			<!--End Sticky Header-->
+
+		</header>
+		<!--End Main Header -->
+
+		<!--Page Title-->
+		<section class="page-title" style="background-image:url(./img/微信图片_20230705174731.jpg)">
+			<div class="auto-container">
+				<h1>"The Tree of Greenhouse Effect"</h1>
+				<ul class="bread-crumb clearfix">
+					<li class="active">museum exhibit on air pollution</li>
+				</ul>
+			</div>
+		</section>
+		<!--End Page Title-->
+
+		<!--About Section-->
+		<section class="about-section">
+			<div class="auto-container">
+				<div class="row clearfix">
+					<div class="content-column col-md-6 col-sm-12 col-xs-12">
+						<div class="inner-column">
+							<div class="sec-title style-two">
+								<div class="sub-title">Welcome to our fascinating museum exhibit on air pollution - "The
+									Tree of Greenhouse Effect." Prepare to be captivated as we delve into the world of
+									greenhouse gases and their alarming impact on our planet.
+								</div>
+								<p> Step into this immersive experience, where you'll embark on a journey of discovery.
+									Through awe-inspiring visuals and interactive displays, we will transport you to
+									real-world settings affected by pollution. Get ready to witness the profound
+									consequences of air pollution and explore innovative solutions to combat its
+									effects.</p>
+
+								<div class="separator"></div>
+							</div>
+							<div class="text">
+								<p>Our exhibit is designed for curious minds like yours – whether you're an aspiring
+									environmentalist, a concerned citizen, or simply eager to learn. Brace yourself for
+									an engaging exploration that empowers you with knowledge, sparks dialogue, and
+									ignites a passion for positive change.
+								</p>
+								<p>Air pollution may be invisible, but its effects are far from inconspicuous. Discover
+									how inhaling harmful pollutants poses risks to our health, leading to chronic
+									diseases, cardiovascular issues, and allergies. You'll be amazed by the stories of
+									individuals whose lives have been impacted by prolonged exposure to pollutants.
+								</p>
+								<p>On a global scale, air pollution casts a dark shadow over our planet. Witness the
+									devastating consequences for animals, the erosion of ecosystems through acid rain,
+									and the economic toll it takes on agriculture and productivity. Dive into the
+									challenges we face and explore innovative solutions that can pave the way to a
+									cleaner and brighter future.</p>
+								<p>Now is the time to seize the opportunity, as young minds like yours hold the power to
+									drive change. Join us on this eye-opening journey to inspire action, spark
+									innovation, and build sustainable communities where clean air is a right for all.
+									Together, let's breathe life into a vision of a vibrant and thriving world for
+									generations to come.</p>
+							</div>
+						</div>
+					</div>
+					<div class="image-column col-md-6 col-sm-12 col-xs-12">
+						<div class="image">
+							<img src="./img/微信图片_20230705125925.png" height="500px" alt="">
+							<img src="./img/微信图片_202307051259225.png" width="800px" height="500px" alt="">
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!--End About Section-->
+		<div class="quiz-box">
+			<h1>Greenhouse Gas Knowledge Quiz</h1>
+
+			<div class="question">
+				<p>1. Which gas is considered a greenhouse gas?</p>
+				<div class="options">
+					<input type="radio" name="q1" value="a"> a. Hydrogen<br>
+					<input type="radio" name="q1" value="b"> b. Carbon dioxide<br>
+					<input type="radio" name="q1" value="c"> c. Oxygen<br>
+				</div>
+			</div>
+
+			<div class="question">
+				<p>2. Does the greenhouse gas affect climate change?</p>
+				<div class="options">
+					<input type="radio" name="q2" value="a"> a. Yes<br>
+					<input type="radio" name="q2" value="b"> b. No<br>
+				</div>
+			</div>
+
+			<div class="question">
+				<p>3. What is the greenhouse effect?</p>
+				<div class="options">
+					<input type="radio" name="q3" value="a"> a. Heat is trapped close to Earth's surface by "greenhouse
+					gases."<br>
+					<input type="radio" name="q3" value="b"> b. Long-term heating of Earth's surface observed since the
+					pre-industrial period due to human activities, primarily fossil fuel burning.<br>
+				</div>
+			</div>
+
+			<div class="submit-btn">
+				<button onclick="submitQuiz()">Submit</button>
+			</div>
+		</div>
+
+		<div class="result" id="result"></div>
+
+		<!--News Section Section-->
+		<section class="news-section-two">
+			<div class="auto-container">
+				<div class="row clearfix">
+
+					<!--News Block Two-->
+					<div class="news-block-two col-md-4 col-sm-6 col-xs-12">
+						<div class="inner-box">
+							<div class="lower-box">
+								<h3>CO2<img src="./img/co2.png" alt=""></h3>
+								<div class="text">
+									<p>Carbon dioxide (CO2): This invisible but potent gas is primarily emitted through
+										human activities. From coal burning in power plants to industrial processes,
+										carbon dioxide plays a significant role in climate change. Discover how this gas
+										affects our atmosphere and what we can do to reduce its impact.
+									</p>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!--News Block Two-->
+					<div class="news-block-two col-md-4 col-sm-6 col-xs-12">
+						<div class="inner-box">
+							<div class="lower-box">
+								<h3>CH4<img src="./img/甲烷.png" alt=""></h3>
+								<div class="text">
+									<p>Hydrocarbons (CH4): Be prepared to unravel the secrets of this powerful
+										greenhouse gas. Released through organic decomposition and fossil fuel leakage,
+										hydrocarbons have a staggering 11 times greater impact on the greenhouse effect
+										than carbon dioxide. Uncover the sources of these emissions and explore
+										strategies to mitigate their effects.
+									</p>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!--News Block Two-->
+					<div class="news-block-two col-md-4 col-sm-6 col-xs-12">
+						<div class="inner-box">
+							<div class="lower-box">
+								<h3>H2O<img src="./img/水.png" alt=""></h3>
+								<div class="text">
+									<p>Water vapor (H2O): Don't underestimate the influence of water vapor! As the most
+										abundant greenhouse gas, it contributes to the greenhouse effect alongside
+										carbon dioxide. Learn about the atmospheric conditions that trap water vapor and
+										the implications for our planet's climate.</p>
+								</div>
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</section>
+		<!--End News Section Section-->
+
+		<!--Team Section-->
+		<section class="team-section">
+			<div class="auto-container">
+
+				<!--Sec Title-->
+				<div class="sec-title centered">
+					<h2>Sketches</h2>
+					<div class="sub-title">These are my design sketches and modeling sketches, showcasing the process of
+						constantly discussing and modifying with team members.</div>
+					<div class="separator"></div>
+				</div>
+				<!--End Sec Title-->
+
+				<div class="row clearfix">
+
+					<!--Team Member-->
+					<div class="team-member col-md-3 col-sm-6 col-xs-12">
+						<div class="inner-box">
+							<div class="image">
+								<img src="./img/微信图片_20230705132957.jpg" alt="">
+							</div>
+							<div class="lower-box">
+								<h3><a href="#">1</a></h3>
+								<div class="designation">1</div>
+								<ul class="social-icon-one">
+									<li><a href="#"><span class="fab fa-facebook"></span></a></li>
+									<li><a href="#"><span class="fab fa-twitter"></span></a></li>
+									<li><a href="#"><span class="fab fa-instagram"></span></a></li>
+									<li><a href="#"><span class="fab fa-linkedin"></span></a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+
+					<!--Team Member-->
+					<div class="team-member col-md-3 col-sm-6 col-xs-12">
+						<div class="inner-box">
+							<div class="image">
+								<img src="./img/微信图片_20230705133004.jpg" alt="">
+							</div>
+							<div class="lower-box">
+								<h3><a href="#">2</a></h3>
+								<div class="designation">2</div>
+								<ul class="social-icon-one">
+									<li><a href="#"><span class="fab fa-facebook"></span></a></li>
+									<li><a href="#"><span class="fab fa-twitter"></span></a></li>
+									<li><a href="#"><span class="fab fa-instagram"></span></a></li>
+									<li><a href="#"><span class="fab fa-linkedin"></span></a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+
+					<!--Team Member-->
+					<div class="team-member col-md-3 col-sm-6 col-xs-12">
+						<div class="inner-box">
+							<div class="image">
+								<img src="./img/微信图片_20230705133009.jpg" alt="">
+							</div>
+							<div class="lower-box">
+								<h3><a href="#">3</a></h3>
+								<div class="designation">3</div>
+								<ul class="social-icon-one">
+									<li><a href="#"><span class="fab fa-facebook"></span></a></li>
+									<li><a href="#"><span class="fab fa-twitter"></span></a></li>
+									<li><a href="#"><span class="fab fa-instagram"></span></a></li>
+									<li><a href="#"><span class="fab fa-linkedin"></span></a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</section>
+		<!--End Team Section-->
+
+		<!--Clients Section-->
+		<section class="clients-section grey-bg">
+			<div class="auto-container">
+				<div class="title-box">
+					<h2 id="Carbon">Carbon Footprint Calculator</h2>
+
+					<div class="text">The carbon footprint calculator in "The Tree of Greenhouse Effect" art
+						installation enhances visitor engagement and interaction. This interactive tool allows visitors
+						to assess their individual carbon emissions and understand the environmental impacts of their
+						daily activities.
+						<br>
+						Using specific coefficients, the calculator provides accurate calculations:
+						<br>
+						- (CO2_private_car_hourly) = 200g/h: Represents carbon dioxide emissions from a private car per
+						hour.
+						<br>
+						- (E_exercise_hourly_ride) = 0.4kcal/h: Indicates energy expenditure during an hour of cycling.
+						<br>
+						- (E_exercise_hourly_walk) = 0.25kcal/h: Represents energy expenditure during an hour of
+						walking.
+						<br>
+						- (E_exercise_hourly_run) = 0.6kcal/h: Signifies energy expenditure during an hour of running.
+						<br>
+						- (CO2_exercise_per_calorie) = 450g/kcal: Reflects carbon emissions associated with burning one
+						calorie through physical exercise.
+						<br>
+						By inputting their daily activities into the carbon footprint calculator, visitors can estimate
+						their carbon emissions and gain insights into how their choices impact the environment. This
+						reminder emphasizes personal daily progress in addressing climate change and encourages
+						sustainable lifestyle choices.
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<h2>Carbon footprint calculator</h2>
+
+		<div class="cal-container">
+			<label for="cal-exerciseType" class="cal-label">Exercise Type:</label>
+			<select id="cal-exerciseType" class="cal-select">
+				<option value="ride">Ride</option>
+				<option value="walk">Walk</option>
+				<option value="run">Run</option>
+			</select>
+
+			<label for="cal-exerciseHours" class="cal-label">Exercise Hours:</label>
+			<input type="number" id="cal-exerciseHours" min="0" step="1" required class="cal-input">
+
+			<button onclick="calculate()" class="cal-button">Calculate</button>
+
+			<p class="cal-result">CO2 emission offset by low-carbon transportation: <span id="cal-result"></span> g</p>
+		</div>
+
+		<section class="clients-section grey-bg">
+			<div class="auto-container">
+				<div class="title-box">
+					<h2 id="Carbon">The Tree</h2>
+
+					<div class="text">"The Tree of Greenhouse Effect" serves as the central sculpture within the digital
+						exhibition, symbolizing the interconnectedness between nature and human activities. Adorned with
+						LED screens on its branches, it showcases the greenhouse effect using immersive visual effects.
+						<br>
+						Strategically placed on the branches, LED screens present compelling visuals and data related to
+						the greenhouse effect. They display images such as rising temperatures, melting glaciers, and
+						rising sea levels, fostering understanding of environmental challenges.
+						<br>
+						The integrated components aim to raise awareness about climate change and encourage dialogue.
+						Visitors are urged to reflect on their carbon footprint, recognizing the collective
+						responsibility we hold in safeguarding the planet for future generations.
+					</div>
+				</div>
+				<div> <img src="./13333017147040896.gif" width="70%" height="70%" alt=""></div>
+			</div>
+		</section>
+
+		<!--End Clients Section-->
+
+		<!--Main Footer-->
+		<footer class="main-footer">
+
+			<!--Footer Bottom-->
+			<div class="footer-bottom">
+				<div class="auto-container">
+					<div class="row clearfix">
+						<div class="column col-md-6 col-sm-6 col-xs-12">
+							<div class="copyright">Copyright &copy; 2023.07.05The Tree of Greenhouse Effect.</div>
+						</div>
+						<div class="column col-md-6 col-sm-6 col-xs-12">
+							<h3>Be gas-wise, cut carbon size!</h3>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</footer>
+	</div>
+	<!--End pagewrapper-->
+
+	<!--Scroll to top-->
+	<script>
+		function submitQuiz() {
+			var correctAnswers = 0;
+			var correctQuestions = [];
+			var incorrectQuestions = [];
+
+			var q1Answer = document.querySelector('input[name="q1"]:checked').value;
+			var q2Answer = document.querySelector('input[name="q2"]:checked').value;
+			var q3Answer = document.querySelector('input[name="q3"]:checked').value;
+
+			if (q1Answer === "b") {
+				correctAnswers++;
+				correctQuestions.push(1);
+			} else {
+				incorrectQuestions.push(1);
+			}
+
+			if (q2Answer === "a") {
+				correctAnswers++;
+				correctQuestions.push(2);
+			} else {
+				incorrectQuestions.push(2);
+			}
+
+			if (q3Answer === "a") {
+				correctAnswers++;
+				correctQuestions.push(3);
+			} else {
+				incorrectQuestions.push(3);
+			}
+
+			var resultText;
+
+			if (correctAnswers === 3) {
+				resultText = "Excellent! You answered all the questions correctly.";
+			} else if (correctAnswers === 1 || correctAnswers === 2) {
+				resultText = "Good! You answered " + correctAnswers + " questions correctly.";
+			} else {
+				resultText = "Perhaps you should know more about this concept. You answered all the questions incorrectly.";
+			}
+
+			if (correctQuestions.length > 0) {
+				resultText += "<br>You answered the following questions correctly: " + correctQuestions.join(", ");
+			}
+
+			if (incorrectQuestions.length > 0) {
+				resultText += "<br>You answered the following questions incorrectly: " + incorrectQuestions.join(", ");
+
+				incorrectQuestions.forEach(function (question) {
+					var correctAnswer;
+					var userAnswer;
+
+					if (question === 1) {
+						correctAnswer = "b";
+						userAnswer = q1Answer;
+					} else if (question === 2) {
+						correctAnswer = "a";
+						userAnswer = q2Answer;
+					} else if (question === 3) {
+						correctAnswer = "a";
+						userAnswer = q3Answer;
+					}
+
+					resultText += "<br>The correct answer for question " + question + " is: " + correctAnswer + ", you selected: " + userAnswer;
+				});
+			}
+
+			document.getElementById("result").innerHTML = resultText;
+		}
+	</script>
+	<script>
+		function calculate() {
+			var privateCarCO2 = 200;
+			var exerciseType = document.getElementById('cal-exerciseType').value;
+			var exerciseHours = parseFloat(document.getElementById('cal-exerciseHours').value);
+			var exerciseCalorie = 0;
+
+			switch (exerciseType) {
+				case 'ride':
+					exerciseCalorie = 0.4;
+					break;
+				case 'walk':
+					exerciseCalorie = 0.25;
+					break;
+				case 'run':
+					exerciseCalorie = 0.6;
+					break;
+			}
+
+			var co2PerCalorie = 450;
+
+			var exerciseCO2 = exerciseCalorie * co2PerCalorie;
+			var savedCO2 = exerciseCO2 * exerciseHours;
+			var result = privateCarCO2 * exerciseHours - savedCO2;
+
+			document.getElementById('cal-result').innerHTML = result.toFixed(2);
+		}
+	</script>
+	<div class="scroll-to-top scroll-to-target" data-target="html"> Up<span class="fa fa-arrow-up"></span></div>
+	<script src="static/js/jquery.js"></script>
+	<script src="static/js/bootstrap.min.js"></script>
+	<script src="static/js/script.js"></script>
+</body>
+
+</html>
